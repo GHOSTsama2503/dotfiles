@@ -9,6 +9,7 @@ cp ~/".config/Code/User/settings.json" "./config/Code/User"
 
 cp ~/".config/btop" "./config" -r
 cp ~/".config/kitty" "./config" -r
+cp ~/".config/lsd" "./config" -r
 cp ~/".config/mpv" "./config" -r
 cp ~/".config/neofetch" "./config" -r
 cp ~/".config/pip" "./config" -r
