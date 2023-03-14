@@ -1,0 +1,23 @@
+{
+    "dotnetAcquisitionExtension.enableTelemetry": false,
+    "dotnetAcquisitionExtension.existingDotnetPath": [
+        {
+            "extensionId": "icsharpcode.ilspy-vscode",
+            "path": "/usr/bin/dotnet"
+        }
+    ],
+    "editor.renderWhitespace": "all",
+    "explorer.confirmDelete": false,
+    "extensions.autoUpdate": false,
+    "files.exclude": {
+        "**/.venv": true
+    },
+    "ilspy.defaultOutputLanguage": "C#",
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "security.workspace.trust.enabled": false,
+    "update.mode": "manual",
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.startupEditor": "none"
+}
