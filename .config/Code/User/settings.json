@@ -1,23 +1,47 @@
 {
-    "dotnetAcquisitionExtension.enableTelemetry": false,
-    "dotnetAcquisitionExtension.existingDotnetPath": [
-        {
-            "extensionId": "icsharpcode.ilspy-vscode",
-            "path": "/usr/bin/dotnet"
-        }
-    ],
+    "[astro]": {
+        "editor.defaultFormatter": "astro-build.astro-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "editor.cursorBlinking": "expand",
+    "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+    "editor.fontLigatures": true,
+    "editor.formatOnSave": true,
+    "editor.minimap.enabled": false,
     "editor.renderWhitespace": "all",
     "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
     "extensions.autoUpdate": false,
     "files.exclude": {
-        "**/.venv": true
+        "**/__pycache__": true
     },
-    "ilspy.defaultOutputLanguage": "C#",
-    "[python]": {
-        "editor.formatOnType": true
-    },
+    "rest-client.enableTelemetry": false,
     "security.workspace.trust.enabled": false,
+    "telemetry.telemetryLevel": "off",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.persistentSessionReviveProcess": "never",
     "update.mode": "manual",
-    "workbench.colorTheme": "One Dark Pro",
+    "window.titleBarStyle": "custom",
+    "workbench.activityBar.location": "top",
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "none"
 }
