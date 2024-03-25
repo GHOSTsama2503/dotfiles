@@ -1,0 +1,65 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "kitty",
+        "source": "~/.config/fastfetch/logo.png", // https://nyarchlinux.moe/assets/img/nyarch-nobackground-square.png
+        "separate": false,
+        "width": 22
+    },
+    "display": {
+        "separator": "  "
+    },
+    "modules": [
+        {
+            "type": "os",
+            "key": "",
+            "keyColor": "cyan",
+            "format": "{2} {8}"
+        },
+        {
+            "type": "kernel",
+            "key": "├─ ",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "packages",
+            "key": "╰─ ",
+            "keyColor": "red"
+        },
+        {
+            "type": "custom",
+            "format": " "
+        },
+        {
+            "type": "terminal",
+            "key": "",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "shell",
+            "key": "╰─ ",
+            "keyColor": "green"
+        },
+        {
+            "type": "custom",
+            "format": " "
+        },
+        {
+            "type": "de",
+            "key": ""
+        },
+        {
+            "type": "wm",
+            "key": "╰─ ",
+            "keyColor": "white"
+        },
+        {
+            "type": "custom",
+            "format": " "
+        },
+        {
+            "type": "colors",
+            "symbol": "circle"
+        }
+    ]
+}
