@@ -3,8 +3,7 @@
     "logo": {
         "type": "kitty",
         "source": "~/.config/fastfetch/logo.png", // https://nyarchlinux.moe/assets/img/nyarch-nobackground-square.png
-        "separate": false,
-        "width": 22
+        "width": 24
     },
     "display": {
         "separator": "  "
