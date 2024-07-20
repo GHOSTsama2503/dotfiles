@@ -1,9 +1,12 @@
 set -l videos_dir $(xdg-user-dir VIDEOS)
+set -l youtube_dirname "YouTube"
 
-if test $videos_dir != ""
-    set -x YT_PATH "$videos_dir/YouTube"
-else if $HOME != ""
-    set -x YT_PATH "$HOME/Videos/YouTube"
+if test ! -d "$videos_dir"
+    set -x YT_PATH "$videos_dir/$youtube_dirname"
+else if test ! -d "$HOME/Videos"
+    set -x YT_PATH "$HOME/Videos/$youtube_dirname"
+else if test ! -d "$HOME"
+    set -x YT_PATH "$HOME/$youtube_dirname"
 end
 
 set -x YT_SINGLE_PATH "$YT_PATH/%(uploader)s/%(title)s.%(ext)s"
