@@ -1,21 +1,28 @@
 # ensure that all shell utilities are in english instead of the system language
 set -x LANG "en_US.UTF-8"
 
-# extends PATH
-set -x PATH "$HOME/.local/bin:$PATH"
+# Android SDK
+set -x ANDROID_HOME "$HOME/.android/sdk"
+set -x PATH "$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
+set -x PATH "$ANDROID_HOME/emulator:$PATH"
+set -x PATH "$ANDROID_HOME/platform-tools:$PATH"
 
+# extends PATH
+set -x PNPM_HOME "$HOME/.local/share/pnpm"
 set -x BUN_INSTALL "$HOME/.bun"
 set -x PATH "$BUN_INSTALL/bin:$PATH"
+set -x PATH "$HOME/.local/bin:$PATH"
+set -x PATH "$HOME/.go/bin:$PATH"
+set -x PATH "$PNPM_HOME:$PATH"
 
-set -x ANDROID_HOME "$HOME/.android/sdk"
-set -x PATH "$ANDROID_HOME/emulator:$PATH"
-set -x PATH "$ANdROID_HOME/platform-tools:$PATH"
+source /opt/asdf-vm/asdf.fish
 
 # aliases
 alias cat="bat -pp"
 alias cls="clear"
-alias fetch="fastfetch"
 alias ls="lsd"
+alias fetch="fastfetch"
+alias neofetch="fastfetch"
 
 # pacman
 alias pm="sudo pacman -S --needed --disable-download-timeout"
@@ -30,19 +37,19 @@ alias pmqe="pacman -Qe"
 alias pmqi="pacman -Qi"
 alias pmqs="pacman -Qs"
 
-# youtube
-alias yt18="yt-dlp -f 18 -o '$HOME/Videos/YouTube/%(uploader)s/%(title)s.%(height)sp.%(ext)s' --embed-chapters"
-alias yt18s="yt-dlp -f 18 -o '$HOME/Videos/YouTube/%(uploader)s/%(title)s.%(height)sp.%(ext)s' --embed-chapters --embed-subs --write-auto-sub --sub-format srt --sub-langs 'es,en'"
-alias yt18p="yt-dlp -f 18 -o '$HOME/Videos/YouTube/%(uploader)s/%(playlist)s/%(playlist_index)s - %(title)s.%(height)sp.%(ext)s' --embed-chapters"
-alias yt18ps="yt-dlp -f 18 -o '$HOME/Videos/YouTube/%(uploader)s/%(playlist)s/%(playlist_index)s - %(title)s.%(height)sp.%(ext)s' --embed-chapters --embed-subs --write-auto-sub --sub-format srt --sub-lang 'es,en'"
 
-alias yt22="yt-dlp -f 22 -o '$HOME/Videos/YouTube/%(uploader)s/%(title)s.%(height)sp.%(ext)s' --embed-chapters"
-alias yt22s="yt-dlp -f 22 -o '$HOME/Videos/YouTube/%(uploader)s/%(title)s.%(height)sp.%(ext)s' --embed-chapters --embed-subs --write-auto-sub --sub-format srt --sub-langs 'es,en'"
-alias yt22p="yt-dlp -f 22 -o '$HOME/Videos/YouTube/%(uploader)s/%(playlist)s/%(playlist_index)s - %(title)s.%(height)sp.%(ext)s' --embed-chapters"
-alias yt22ps="yt-dlp -f 22 -o '$HOME/Videos/YouTube/%(uploader)s/%(playlist)s/%(playlist_index)s - %(title)s.%(height)sp.%(ext)s' --embed-chapters --embed-subs --write-auto-sub --sub-format srt --sub-lang 'es,en'"
+alias pm-search="pacman -Ss"
+alias pm-install="sudo pacman -S"
+alias pm-list="pacman -Q"
+alias pm-list-verbose="pacman -Qs"
+alias pm-list-explicit="pacman -Qe"
+alias pm-list-manually="pacman -Qm"
+alias pm-remove="sudo pacman -Rns"
+alias pm-autoremove-list="pacman -Qdtq"
+alias pm-autoremove="pm-autoremove-list | sudo pacman -Rns -"
+alias pm-clean="sudo pacman -Sc"
+alias pm-rmcache="sudo pacman -Scc"
 
-alias yt251="yt-dlp -f 251 -o '$HOME/Videos/YouTube/%(uploader)s/%(title)s.%(ext)s' --embed-chapters"
-alias yt251p="yt-dlp -f 251 -o '$HOME/Videos/YouTube/%(uploader)s/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' --embed-chapters"
 
 # init fish shell
 if status is-interactive
