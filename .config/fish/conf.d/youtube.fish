@@ -1,16 +1,47 @@
-set -l videos_dir $(xdg-user-dir VIDEOS)
-set -l youtube_dirname "YouTube"
+set -l youtube_dirname YouTube
 
-if test ! -d "$videos_dir"
-    set -x YT_PATH "$videos_dir/$youtube_dirname"
-else if test ! -d "$HOME/Videos"
-    set -x YT_PATH "$HOME/Videos/$youtube_dirname"
-else if test ! -d "$HOME"
-    set -x YT_PATH "$HOME/$youtube_dirname"
+if test ! -f $(which uname)
+    echo "can not find 'uname'"
+    exit
 end
 
-set -x YT_SINGLE_PATH "$YT_PATH/%(uploader)s/%(title)s.%(ext)s"
-set -x YT_PLAYLIST_PATH "$YT_PATH/%(uploader)s/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"
+switch $(uname -o)
+    case Android
+        set -l android_uid 0
+        set -l android_storage = emulated
+
+        set -l videos_dir "/storage/$android_storage/$android_uid/Videos"
+
+    case GNU/Linux
+        if test -f $(which xdg-user-dir)
+            set -l videos_dir $(xdg-user-dir VIDEOS)
+
+        else if test -n $HOME
+            set -l videos_dir "$HOME/Videos"
+        end
+end
+
+
+if test ! -n "$videos_dir"
+    set -l videos_dir "$HOME/Videos"
+end
+
+printf "videos dir: $videos_dir"
+
+if test ! -d "$videos_dir"
+    mkdir -p "$videos_dir"
+end
+
+
+if test -n $youtube_dirname
+    set -x YT_PATH "$videos_dir/$youtube_dirname"
+else
+    set -x YT_PATH "$videos_dir"
+end
+
+
+set -x YT_SINGLE_PATH "$YT_PATH/%(uploader)s/%(title)s.%(height)sp.%(ext)s"
+set -x YT_PLAYLIST_PATH "$YT_PATH/%(uploader)s/%(playlist)s/%(playlist_index)s - %(title)s.%(height)sp.%(ext)s"
 
 
 function ytdl --wraps yt-dlp --description "Base arguments for YouTube downloads"
