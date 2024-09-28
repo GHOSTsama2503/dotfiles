@@ -10,6 +10,9 @@
     },
     "modules": [
         {
+            "type": "break"
+        },
+        {
             "type": "os",
             "key": "",
             "keyColor": "cyan",
@@ -26,8 +29,7 @@
             "keyColor": "red"
         },
         {
-            "type": "custom",
-            "format": " "
+            "type": "break"
         },
         {
             "type": "terminal",
@@ -40,8 +42,7 @@
             "keyColor": "green"
         },
         {
-            "type": "custom",
-            "format": " "
+            "type": "break"
         },
         {
             "type": "de",
@@ -53,12 +54,14 @@
             "keyColor": "white"
         },
         {
-            "type": "custom",
-            "format": " "
+            "type": "break"
         },
         {
             "type": "colors",
             "symbol": "circle"
+        },
+        {
+            "type": "break"
         }
     ]
 }
