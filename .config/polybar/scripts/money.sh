@@ -14,7 +14,7 @@ current_date=$(date +%s)
 date_diff=$(("$current_date" - "$last_update"))
 
 if [[ "$date_diff" -gt "$interval" ]]; then
-	curl -sS http://cdn.local/eltoque.com > "$tmp_file"
+	curl -sS https://eltoque.com > "$tmp_file"
 	last_update=$(date +%s)
 
 	echo -n "$last_update" > "$last_update_file"
